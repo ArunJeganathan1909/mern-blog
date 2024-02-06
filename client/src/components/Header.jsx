@@ -37,9 +37,9 @@ const Header = () => {
           <FaMoon />
         </Button>
         <Link to="/sign-in">
-          <Button
-            className="px-2 py-1 bg-gradient-to-r from-purple-500
-            to-blue-500 rounded-lg text-white"
+          <Button            
+            gradientDuoTone='purpleToBlue'
+            outline
           >
             Sign In
           </Button>
