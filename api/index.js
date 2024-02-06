@@ -1,9 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const userRoutes = require('./routes/User.route');
+const userRoutes = require("./routes/User.route");
+const authRoutes = require("./routes/Auth.route");
 
 const app = express();
 const PORT = 3000;
+
+app.use(express.json());
 
 require("dotenv").config();
 mongoose
@@ -20,3 +23,4 @@ app.listen(PORT, () => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
