@@ -7,7 +7,7 @@ const SignUp = () => {
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -34,8 +34,8 @@ const SignUp = () => {
         return setErrorMessage(data.message);
       }
       setLoading(false);
-      if(res.ok){
-        navigate('/signin')
+      if (res.ok) {
+        navigate("/signin");
       }
     } catch (error) {
       setErrorMessage(error.message);
