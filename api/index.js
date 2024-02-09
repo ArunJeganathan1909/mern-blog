@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRoutes = require("./routes/User.route");
 const authRoutes = require("./routes/Auth.route");
+const postRoutes = require("./routes/Post.route");
 const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -26,6 +27,7 @@ app.listen(PORT, () => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/post", postRoutes);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
