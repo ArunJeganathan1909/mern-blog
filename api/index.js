@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const userRoutes = require("./routes/User.route");
 const authRoutes = require("./routes/Auth.route");
 const postRoutes = require("./routes/Post.route");
+const commentRoutes = require("./routes/Comment.route");
 const cookieParser = require("cookie-parser");
 
 const app = express();
@@ -28,6 +29,7 @@ app.listen(PORT, () => {
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/post", postRoutes);
+app.use("/api/comment", commentRoutes);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
